@@ -8,6 +8,8 @@ const triggleDroppDown = (e)=>{
     const clickedElement  = e.target
     let parentElement = clickedElement.nodeName === "path" ?  clickedElement.parentElement.parentElement : clickedElement
     let targetElement = parentElement.lastChild;
+    console.log(targetElement )
+    console.log(".............")
     if (typeof targetElement !== 'undefined'){
         targetElement.classList.toggle('hidden')
     }else{
@@ -60,9 +62,9 @@ function SecondNav() {
                     Location
                     <div className="flex flex-col p-2 w-32 absolute bg-white border-1 border-blue-400 rounded-sm hidden" >
                         <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" onClick={()=>{openModal("addLocationModal")}} to="/">Add New Location</Link>
-                        <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" to="/driverList">Location List</Link>
-                        <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" onClick={()=>{openModal("driverLoginModal")}}  to="/">Add New Zone</Link>
-                        <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" to="/driverLoginList">Zone List</Link>
+                        <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" to="/locationList">Location List</Link>
+                        <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" onClick={()=>{openModal("addZoneModal")}}  to="/">Add New Zone</Link>
+                        <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" to="/zoneList">Zone List</Link>
                     </div>
                 </Link>
                 <Link className="p-1 text-blue-900 mr-2 text-xs cursor-pointer text-center" to="/#">
