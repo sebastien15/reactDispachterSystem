@@ -14,6 +14,7 @@ import DriverShiftModal from './components/driverShiftModal';
 import AddLocationModal from './components/locationAddModal';
 import LocationList from './components/locationList';
 import AddZoneModal from './components/zoneModal';
+import ZoneList from './components/zoneList';
 // import {useSelector, useDispatch } from 'react-redux';
 // import {incrementCounter, decrementCounter} from './redux/actions'
 
@@ -42,6 +43,7 @@ function App() {
           <Route path="/leftDriverList" component={DriverLeftList}/>
           <Route path="/driverLoginList" component={DriverLoginList}/>
           <Route path="/locationList" component={LocationList}/>
+          <Route path="/zoneList" component={ZoneList}/>
         </Switch>
       </Router>
     </>
