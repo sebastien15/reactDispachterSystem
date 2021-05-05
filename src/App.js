@@ -8,6 +8,7 @@ import Dashboard from './components/dashboard';
 import DriverModal from './components/driverModal';
 import DriverLoginModal from './components/driverLoginModal';
 import DriverList from './components/driverList';
+import DriverLeftList from './components/driverLeftList';
 import DriverLoginList from './components/driverLoginList';
 import DriverShiftModal from './components/driverShiftModal';
 // import {useSelector, useDispatch } from 'react-redux';
@@ -33,6 +34,7 @@ function App() {
           <Route exact path="/" component={Dashboard}/>
           <Route path="/fare" component={Fare}/>
           <Route path="/driverList" component={DriverList}/>
+          <Route path="/leftDriverList" component={DriverLeftList}/>
           <Route path="/driverLoginList" component={DriverLoginList}/>
         </Switch>
       </Router>
