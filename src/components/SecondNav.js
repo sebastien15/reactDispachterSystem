@@ -52,7 +52,7 @@ function SecondNav() {
                         <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" onClick={()=>{openModal("driverLoginModal")}}  to="/">Driver Login</Link>
                         <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" to="/driverLoginList">Driver Login List</Link>
                         <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" onClick={()=>{openModal("addDriverShiftModal")}} to="/">Driver Shifts</Link>
-                        <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" to="/">Inactive Driver List</Link>
+                        <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" to="/leftDriverList">Inactive Driver List</Link>
                     </div>
                 </Link>
                 <Link className="p-1 text-blue-900 mr-2 text-xs cursor-pointer text-center" to="/#">
