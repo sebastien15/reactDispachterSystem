@@ -1,31 +1,40 @@
 import './App.css';
 import TopNav from './components/topNav';
 import SecondNav from './components/SecondNav';
-import BookingsTable from './components/dashboard/bookingsTable';
-import Nav from './components/dashboard/nav';
-import MapContainer from './components/dashboard/mapContainer';
-import DriverOnBoarding from './components/dashboard/driverOnBoarding';
-import DriverWaiting from './components/dashboard/driverWaiting';
 import {BrowserRouter as Router,  Route, Switch } from 'react-router-dom';
+import FareModal from './components/fareModal';
+import Fare from './components/fare';
+import Dashboard from './components/dashboard';
+import DriverModal from './components/driverModal';
+import DriverLoginModal from './components/driverLoginModal';
+import DriverList from './components/driverList';
+import DriverLoginList from './components/driverLoginList';
+import DriverShiftModal from './components/driverShiftModal';
+// import {useSelector, useDispatch } from 'react-redux';
+// import {incrementCounter, decrementCounter} from './redux/actions'
 
 function App() {
+  // const counter = useSelector(state => state.counter)
+  // const dispatch = useDispatch();
+
   return (
     <>
       <TopNav/>
-      <SecondNav/>
+      {/* <h1>counter : {counter}</h1>
+      <button onClick={()=>dispatch(incrementCounter(5))}>add counter</button>
+      <button onClick={()=>dispatch(decrementCounter())}>minus counter</button> */}
+      <FareModal/>
+      <DriverModal/>
+      <DriverLoginModal/>
+      <DriverShiftModal/>
       <Router>
+        <SecondNav/>
         <Switch>
-          <Route exact path="/">
-            <Nav/>
-            <div className="flex mt-2 mb-2">
-              <MapContainer/>
-              <DriverOnBoarding/>
-              <DriverWaiting/>
-            </div>
-            <BookingsTable/>
-          </Route>
+          <Route exact path="/" component={Dashboard}/>
+          <Route path="/fare" component={Fare}/>
+          <Route path="/driverList" component={DriverList}/>
+          <Route path="/driverLoginList" component={DriverLoginList}/>
         </Switch>
-
       </Router>
     </>
   );
