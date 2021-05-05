@@ -55,9 +55,16 @@ function SecondNav() {
                         <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" to="/leftDriverList">Inactive Driver List</Link>
                     </div>
                 </Link>
-                <Link className="p-1 text-blue-900 mr-2 text-xs cursor-pointer text-center" to="/#">
+                <Link className="p-1 text-blue-900 mr-2 text-xs cursor-pointer text-center" to="/#" onClick={triggleDroppDown}>
                     <FontAwesomeIcon icon={faSyncAlt} size="3x" /><br/>
-                    Location</Link>
+                    Location
+                    <div className="flex flex-col p-2 w-32 absolute bg-white border-1 border-blue-400 rounded-sm hidden" >
+                        <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" onClick={()=>{openModal("addLocationModal")}} to="/">Add New Location</Link>
+                        <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" to="/driverList">Location List</Link>
+                        <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" onClick={()=>{openModal("driverLoginModal")}}  to="/">Add New Zone</Link>
+                        <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" to="/driverLoginList">Zone List</Link>
+                    </div>
+                </Link>
                 <Link className="p-1 text-blue-900 mr-2 text-xs cursor-pointer text-center" to="/#">
                     <FontAwesomeIcon icon={faUserAlt} size="3x" /><br/>
                     Customer</Link>
