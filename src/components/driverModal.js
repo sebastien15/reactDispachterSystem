@@ -14,9 +14,9 @@ function DriverModal() {
             </div>
             <div className="mt-2 text-xs">
                 <nav>
-                    <a className="p-1 mr-1 cursor-pointer border border-blue-400 hover:bg-blue-400 hover:text-white">Driver Info</a>
-                    <a className="p-1 mr-1 cursor-pointer border border-blue-400 hover:bg-blue-400 hover:text-white">Driver Shifts</a>
-                    <a className="p-1 mr-1 cursor-pointer border border-blue-400 hover:bg-blue-400 hover:text-white">Vehicle History</a>
+                    <button className="p-1 mr-1 cursor-pointer border border-blue-400 hover:bg-blue-400 hover:text-white">Driver Info</button>
+                    <button className="p-1 mr-1 cursor-pointer border border-blue-400 hover:bg-blue-400 hover:text-white">Driver Shifts</button>
+                    <button className="p-1 mr-1 cursor-pointer border border-blue-400 hover:bg-blue-400 hover:text-white">Vehicle History</button>
                 </nav>
             </div>
             <div className="flex mt-2">

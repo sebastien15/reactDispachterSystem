@@ -49,16 +49,16 @@ function DriverShiftModal() {
                 <table className="w-full">
                     <tbody>
                         <tr className="bg-blue-500 border border-blue-500 text-white text-xs  text-center">
-                            <td className=" border-r border-blue-500"p-1 >Shifts</td>
-                            <td className=" border-r border-blue-500"p-1 >From Time</td>
-                            <td className=" border-r border-blue-500"p-1 >To Time</td>
-                            <td className=" border-r border-blue-500"p-1 ></td>
+                            <td className=" border-r border-blue-500 P-1" >Shifts</td>
+                            <td className=" border-r border-blue-500 P-1" >From Time</td>
+                            <td className=" border-r border-blue-500 P-1" >To Time</td>
+                            <td className=" border-r border-blue-500 P-1" ></td>
                         </tr>
                         <tr className="text-xs border border-blue-500 text-center">
-                            <td className=" border-r border-blue-500"p-1 >Shifts</td>
-                            <td className=" border-r border-blue-500"p-1 >From Time</td>
-                            <td className=" border-r border-blue-500"p-1 >To Time</td>
-                            <td className=" border-r border-blue-500"p-1 ></td>
+                            <td className=" border-r border-blue-500 P-1" >Shifts</td>
+                            <td className=" border-r border-blue-500 P-1" >From Time</td>
+                            <td className=" border-r border-blue-500 P-1" >To Time</td>
+                            <td className=" border-r border-blue-500 P-1" ></td>
                         </tr>
                     </tbody>
                 </table>

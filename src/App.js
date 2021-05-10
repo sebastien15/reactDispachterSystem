@@ -15,6 +15,13 @@ import AddLocationModal from './components/locationAddModal';
 import LocationList from './components/locationList';
 import AddZoneModal from './components/zoneModal';
 import ZoneList from './components/zoneList';
+import AddCustomerModal from './components/customerAddModal';
+import CustomerList from './components/customerList';
+import VehicleList from './components/vehicleList';
+import AddVehicleModal from './components/vehicleAddModal';
+import CallIdConfigModal from './components/callIdConfigurationModal';
+import CallHistoryModal from './components/callHistoryModal';
+import Setting from './components/setting';
 // import {useSelector, useDispatch } from 'react-redux';
 // import {incrementCounter, decrementCounter} from './redux/actions'
 
@@ -34,6 +41,11 @@ function App() {
       <DriverShiftModal/>
       <AddLocationModal/>
       <AddZoneModal/>
+      <AddCustomerModal/>
+      <AddVehicleModal/>
+      <CallIdConfigModal/>
+      <CallHistoryModal/>
+
       <Router>
         <SecondNav/>
         <Switch>
@@ -44,6 +56,9 @@ function App() {
           <Route path="/driverLoginList" component={DriverLoginList}/>
           <Route path="/locationList" component={LocationList}/>
           <Route path="/zoneList" component={ZoneList}/>
+          <Route path="/customerList" component={CustomerList}/>
+          <Route path="/vehicleList" component={VehicleList}/>
+          <Route path="/setting" component={Setting}/>
         </Switch>
       </Router>
     </>

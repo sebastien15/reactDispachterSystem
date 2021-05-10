@@ -8,13 +8,24 @@ const triggleDroppDown = (e)=>{
     const clickedElement  = e.target
     let parentElement = clickedElement.nodeName === "path" ?  clickedElement.parentElement.parentElement : clickedElement
     let targetElement = parentElement.lastChild;
-    console.log(targetElement )
-    console.log(".............")
-    if (typeof targetElement !== 'undefined'){
+    let allDropDowns = document.querySelectorAll('.dropDown');
+    try {
+        for (let i = 0; i < allDropDowns.length; i++) {
+            const element = allDropDowns[i];
+            if (!element.classList.contains('hidden')) {
+                 element.classList.add('hidden')
+            }
+        }
         targetElement.classList.toggle('hidden')
-    }else{
-        return false
+
+    } catch (error) {
+        console.log(error.message)
     }
+    // if (typeof targetElement !== 'undefined'){
+    //     targetElement.classList.toggle('hidden')
+    // }else{
+    //     return false
+    // }
     
 }
 export const openModal = (e)=>{
@@ -35,7 +46,7 @@ function SecondNav() {
                 <Link className="p-1 text-blue-900 mr-2 text-xs cursor-pointer text-center relative" onClick={triggleDroppDown} to="">
                     <FontAwesomeIcon icon={faBook} size="3x"/><br/>
                     Booking
-                    <div className="flex flex-col p-2 w-32 absolute bg-white border-1 border-blue-400 rounded-sm hidden">
+                    <div className="dropDown flex flex-col p-2 w-32 absolute bg-white border-1 border-blue-400 rounded-sm hidden">
                         <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" to="/">Add new booking</Link>
                         <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" to="/">Booking List</Link>
                         <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" to="/">Trash bookings</Link>
@@ -48,7 +59,7 @@ function SecondNav() {
                 <Link className="p-1 text-blue-900 mr-2 text-xs cursor-pointer text-center" to="/#" onClick={triggleDroppDown}>
                     <FontAwesomeIcon icon={faUser} size="3x"/><br/>
                     Driver
-                    <div className="flex flex-col p-2 w-32 absolute bg-white border-1 border-blue-400 rounded-sm hidden" >
+                    <div className="dropDown flex flex-col p-2 w-32 absolute bg-white border-1 border-blue-400 rounded-sm hidden" >
                         <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" onClick={()=>{openModal("addDriverModal")}} to="/">Add New Driver</Link>
                         <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" to="/driverList">Driver List</Link>
                         <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" onClick={()=>{openModal("driverLoginModal")}}  to="/">Driver Login</Link>
@@ -60,23 +71,40 @@ function SecondNav() {
                 <Link className="p-1 text-blue-900 mr-2 text-xs cursor-pointer text-center" to="/#" onClick={triggleDroppDown}>
                     <FontAwesomeIcon icon={faSyncAlt} size="3x" /><br/>
                     Location
-                    <div className="flex flex-col p-2 w-32 absolute bg-white border-1 border-blue-400 rounded-sm hidden" >
+                    <div className="dropDown flex flex-col p-2 w-32 absolute bg-white border-1 border-blue-400 rounded-sm hidden" >
                         <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" onClick={()=>{openModal("addLocationModal")}} to="/">Add New Location</Link>
                         <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" to="/locationList">Location List</Link>
                         <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" onClick={()=>{openModal("addZoneModal")}}  to="/">Add New Zone</Link>
                         <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" to="/zoneList">Zone List</Link>
                     </div>
                 </Link>
-                <Link className="p-1 text-blue-900 mr-2 text-xs cursor-pointer text-center" to="/#">
+                <Link className="p-1 text-blue-900 mr-2 text-xs cursor-pointer text-center" to="/#" onClick={triggleDroppDown}>
                     <FontAwesomeIcon icon={faUserAlt} size="3x" /><br/>
-                    Customer</Link>
-                <Link className="p-1 text-blue-900 mr-2 text-xs cursor-pointer text-center" to="/#">
+                    Customer
+                    <div className="dropDown flex flex-col p-2 w-32 absolute bg-white border-1 border-blue-400 rounded-sm hidden" >
+                        <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" onClick={()=>{openModal("addCustomerModal")}} to="/">Add New Customer</Link>
+                        <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" to="/customerList">Customer List</Link>
+                        <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" onClick={()=>{openModal("add")}}  to="/">Add Lost Property</Link>
+                        <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" to="/lostPropertyList">Lost Property List</Link>
+                    </div>
+                </Link>
+                <Link className="p-1 text-blue-900 mr-2 text-xs cursor-pointer text-center" to="/#" onClick={triggleDroppDown}>
                     <FontAwesomeIcon icon={faCarSide} size="3x" /><br/>
-                    Vehicle</Link>
-                <Link className="p-1 text-blue-900 mr-2 text-xs cursor-pointer text-center" to="/#">
+                    Vehicle
+                    <div className="dropDown flex flex-col p-2 w-32 absolute bg-white border-1 border-blue-400 rounded-sm hidden" >
+                        <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" onClick={()=>{openModal("addVehicleModal")}} to="/">Add Vehicle</Link>
+                        <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" to="/vehicleList">Vehicle List</Link>
+                    </div>    
+                </Link>
+                <Link className="p-1 text-blue-900 mr-2 text-xs cursor-pointer text-center" to="/#"  onClick={triggleDroppDown}>
                     <FontAwesomeIcon icon={faIdBadge} size="3x" /><br/>
-                    Caller id</Link>
-                <Link className="p-1 text-blue-900 mr-2 text-xs cursor-pointer text-center" to="/#">
+                     Caller id
+                    <div className="dropDown flex flex-col p-2 w-32 absolute bg-white border-1 border-blue-400 rounded-sm hidden" >
+                        <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" to="/" onClick={()=>{openModal("callIdConfigModal")}}>Configurations</Link>
+                        <Link className="cursor-pointer hover:bg-blue-400 hover:rounded-md py-1" to="/" onClick={()=>{openModal("callHistoryModal")}}>view call history</Link>
+                    </div>   
+                </Link>
+                <Link className="p-1 text-blue-900 mr-2 text-xs cursor-pointer text-center" to="/setting">
                     <FontAwesomeIcon icon={faCogs} size="3x" /><br/>
                     Settings</Link>
                 <Link className="p-1 text-blue-900 mr-2 text-xs cursor-pointer text-center" to="/#">

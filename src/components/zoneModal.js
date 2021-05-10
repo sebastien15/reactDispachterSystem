@@ -1,5 +1,3 @@
-import { faAngleLeft, faAngleRight, faBookOpen, faCross, faFile, faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { openModal } from "./SecondNav"
 
 function AddZoneModal() {
@@ -30,14 +28,16 @@ function AddZoneModal() {
                             </div>
                             <div className=" mt-2 w-full">
                                     <table className="min-w-full">
-                                        <tr className="bg-blue-500">
-                                            <td className="text-white border-r border-blue-900">Post code</td>
-                                            <td className=" border-r border-blue-900" ></td>
-                                        </tr>
-                                        <tr>
-                                            <td className="border-r border-blue-900">2</td>
-                                            <td>1</td>
-                                        </tr>
+                                        <tbody>
+                                            <tr className="bg-blue-500">
+                                                <td className="text-white border-r border-blue-900">Post code</td>
+                                                <td className=" border-r border-blue-900" ></td>
+                                            </tr>
+                                            <tr>
+                                                <td className="border-r border-blue-900">2</td>
+                                                <td>1</td>
+                                            </tr>
+                                        </tbody>
                                     </table>
                             </div>
                         </div>
